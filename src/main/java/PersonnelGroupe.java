@@ -27,12 +27,12 @@ public class PersonnelGroupe extends PersonnelType implements Iterable<Personnel
 		return personnelList.listIterator();
 	}
 	
-	public ParGroupeIterator parGroupeIterator() {
-		return new ParGroupeIterator(this);
+	public ParGroupe parGroupe() {
+		return new ParGroupe(this);
 	}
 	
-	public ParHierarchieIterator parHierarchieIterator() {
-		return new ParHierarchieIterator(this);
+	public ParHierarchie parHierarchie () {
+		return new ParHierarchie (this);
 	}
 	
 	@Override

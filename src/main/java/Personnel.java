@@ -10,7 +10,7 @@ public final class Personnel extends PersonnelType {
 	private final String prenom;
 	private final String fonction;
 	private final LocalDate dateNaissance;
-	private final List<NumeroTelephone> numerosTelephone;
+	private final List<NumTel> numerosTelephone;
 	
 	public static class PersonnelBuilder {
 		
@@ -21,7 +21,7 @@ public final class Personnel extends PersonnelType {
 		
 		// Optionnel
 		private LocalDate dateNaissance = null;
-		private List<NumeroTelephone> numerosTelephone = new ArrayList<NumeroTelephone>();
+		private List<NumTel> numerosTelephone = new ArrayList<NumTel>();
 		
 		public PersonnelBuilder(String nom, String prenom, String fonction) {
 			this.nom = nom;
@@ -34,7 +34,7 @@ public final class Personnel extends PersonnelType {
 			return this;
 		}
 		
-		public PersonnelBuilder addNumeroTelephone(NumeroTelephone numeroTelephone) {
+		public PersonnelBuilder addNumeroTelephone(NumTel numeroTelephone) {
 			this.numerosTelephone.add(numeroTelephone);
 			return this;
 		}
@@ -55,7 +55,7 @@ public final class Personnel extends PersonnelType {
 public String toString() {
 		return nom + " " + prenom + " " + fonction + " "
 				+ dateNaissance.format(DateTimeFormatter.ISO_DATE) + " "
-				+ numerosTelephone.stream().map(NumeroTelephone::toString).collect(Collectors.toList());
+				+ numerosTelephone.stream().map(NumTel::toString).collect(Collectors.toList());
 	}
 
 	public String getNom() {
@@ -74,7 +74,7 @@ public String toString() {
 		return dateNaissance;
 	}
 
-	public List<NumeroTelephone> getNumerosTelephone() {
+	public List<NumTel> getNumerosTelephone() {
 		return numerosTelephone;
 	}
 	
